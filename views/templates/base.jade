@@ -1,18 +1,14 @@
 doctype html
-html(ng-app="myApp")
+block vars
+  - ngApp = appName
+  - ngConroller = bodyController
+html(ng-app="#{ngApp}")
   head
-    title= title
-    link(rel='stylesheet', href='/static/stylesheets/style.css')
-    link(rel='stylesheet', href='/static/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='/_generate/css/result.css')
     script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js')
     script(src='/_generate/js/output.min.js')  
-    script.
-      function data(data) {
-        window.data = data;
-      }   
-      data(!{JSON.stringify(title)});
+    include ../components/localStorage.jade
 
       
-  body(ng-controller='myController')
+  body(ng-controller="#{bodyController}")
     block content

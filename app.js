@@ -37,6 +37,9 @@ app.use(function(req, res, next) {
 // error handlers
 
 
+// config properties
+app.locals.config = require('./lib/config/config.js');
+
 // customize functions
 app.locals.getMessage = function() {
   return 'by Kunal Chaudhari';

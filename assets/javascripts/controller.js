@@ -4,6 +4,7 @@ angular.module('myApp', [])
     window.data = 'test';
     $scope.clickMe = function() {
         window.data = $scope.title;
+        alert('hi');
     };
     // $scope.clickMe = function() {
       

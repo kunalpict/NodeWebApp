@@ -10,6 +10,14 @@ router.get('/', function(req, res, next) {
   //res.download('/public/1.docx');
 });
 
+router.get('/login', function(req, res, next) {
+  res.locals.title = JSON.stringify(req.headers);
+  //res.clearCookie('dtve-tour-browse-two', { path: '/' });;
+  res.cookie('dtve-tour-browse-two', false,{ path: '/users' });;
+  res.render('login');
+  //res.download('/public/1.docx');
+});
+
 /* GET home page. */
 router.get('/json/index', function(req, res, next) {
   

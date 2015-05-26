@@ -1,6 +1,18 @@
 extends ../templates/base
+prepend vars
+  - var appName = "myApp";
+  - var bodyController = "myController";
 
 block content
-  h1  This is test index page
-    | and this is test line
-  h2 #{getMessage()}  
+  div.overlay(ng-click="clickMe()")
+    h2 #{getMessage()}
+    div#container1.container.container1 div one!!
+      input#username(type="text", placeholder="username",)
+      input#password(type="password", placeholder="password")   
+      button#click submit 
+    div#container2.container.container2()
+      iframe(src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&origin=http://example.com",seamless,height="200px",width="200px")
+    div#container1.container.container1
+      iframe(src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&origin=http://example.com",seamless,height="200px",width="200px")
+    iframe(src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&origin=http://example.com",seamless,height="400px",width="800px")
+    
